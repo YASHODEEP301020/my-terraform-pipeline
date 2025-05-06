@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: DataBrew Recipe to remove duplicates by email and id
+
+Resources:
+  MyDataBrewRecipe:
+    Type: AWS::DataBrew::Recipe
+    Properties:
+      Name: my-databrew-recipe
+      Description: "Remove duplicates based on email"
+      Steps:
+        - Action:
+            Operation: REMOVE_DUPLICATES
+            Parameters:
+              sourceColumn: "email"
+          ConditionExpressions: []
+      Tags:
+        - Key: Project
+          Value: TerraformDataPipeline

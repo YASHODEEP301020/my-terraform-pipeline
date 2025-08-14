@@ -1,12 +1,9 @@
-resource "aws_s3_bucket" "this" {
-  bucket = var.bucket_name
-
-  force_destroy = true
+terraform {
+  backend "s3" {
+    bucket = "serverless-data-pipeline-backend-bucket-yashodeep-2025"
+    key    = "terraform.tfstate"
+    region = "ap-south-1"
+  }
 }
 
-resource "aws_s3_object" "sample_data" {
-  bucket = aws_s3_bucket.this.id
-  key    = "data/sample.json"
-  source = "${path.module}/sample.json"
-  content_type = "application/json"
-}
+

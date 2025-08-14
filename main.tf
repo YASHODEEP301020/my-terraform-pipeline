@@ -9,12 +9,12 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 module "s3_bucket" {
   source = "./modules/s3"
-  bucket_name = "upload-bucket-data-pipeline-234"
+  bucket_name = "serverless-data-pipeline-backend-bucket-yashodeep-2025"
 }
 
 module "dynamodb_table" {

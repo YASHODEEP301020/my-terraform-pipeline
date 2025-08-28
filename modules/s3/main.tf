@@ -1,9 +1,12 @@
-terraform {
-  backend "s3" {
-    bucket = "serverless-data-pipeline-backend-bucket-yashodeep-2025"
-    key    = "terraform.tfstate"
-    region = "ap-south-1"
-  }
+resource "aws_s3_bucket" "primary" {
+  bucket = "my-app-storage-bucket-yash1234"
 }
+
+resource "aws_s3_bucket" "secondary" {
+  bucket = "my-app-storage-bucket-logs"
+}
+
+
+
 
 

@@ -13,9 +13,10 @@ provider "aws" {
 }
 
 module "s3_bucket" {
-  source = "./modules/s3"
-  bucket_name = "serverless-data-pipeline-backend-bucket-yashodeep-2025"
+  source         = "./modules/s3"
+  backend_bucket = "my-app-storage-bucket"   # new bucket created by Terraform
 }
+
 
 module "dynamodb_table" {
   source = "./modules/dynamodb"
